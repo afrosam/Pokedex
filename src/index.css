@@ -1,14 +1,354 @@
-body {
-  margin: 0;
+html, body {
   padding: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  margin: 0;
+  box-sizing: border-box;
+  width: 100vw;
+  height: 100vh;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+:root {
+  --main-bg-color: rgba(189, 18, 18, 0.8);
+}
+
+#root {
+  height: 100%;
+}
+
+.App {
+  width: 100%;
+  height: 100%;
+  background-image: url('https://wallpapertag.com/wallpaper/full/a/d/2/503739-gorgerous-cool-pokemon-backgrounds-1920x1080-photo.jpg');
+  background-repeat: no-repeat;
+  background-color: var(--main-bg-color);
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-content: center; 
+  flex-direction: column;
+}
+
+.container {
+  width: 75%;
+  margin: 0 auto;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--main-bg-color);
+  border-width: 5px;
+  border-color: hsl(0, 100%, 20%);
+  border-style: ridge;
+}
+
+.topPad {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.topLights {
+  display: flex;
+  flex: 2;
+  justify-content: space-evenly;
+}
+
+#big-button {
+  border-radius: 50%;
+  display: inline-block;
+  box-shadow: 0px 0px 1px 1px #0fb4e7;
+  margin: 1.5em;
+  width: 5em;
+  height: 5em;
+  border: 2px solid hsl(194, 75%, 30%);
+  background: #a9e4f7; /* Old browsers */
+  background: -moz-radial-gradient(center, ellipse farthest-corner, #a9e4f7 0%, #0fb4e7 100%); /* FF3.6-15 */
+  background: -webkit-radial-gradient(center, ellipse farthest-corner, #a9e4f7 0%,#0fb4e7 100%); /* Chrome10-25,Safari5.1-6 */
+  background: radial-gradient(ellipse at center, #a9e4f7 0%,#0fb4e7 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a9e4f7', endColorstr='#0fb4e7',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+  --main-bg-color: #0fb4e7;
+  
+}
+.lgLight {
+  animation-name: lightuplg;
+  animation-duration: .4s;
+  animation-iteration-count: 3;
+}
+
+.smLights {
+  animation-name: lightupsm;
+  animation-duration: .5s;
+  animation-iteration-count: 2;
+}
+
+#side-buttons {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 5em;
+  height: 2em;
+  margin: 1em 0;
+}
+
+#side-buttons > div {
+  width: 1em;
+  height: 1em;
+  border-radius: 50%;
+  border: 1px thin #333;
+}
+
+#r {
+  background-color:  red;
+  --main-bg-color: red;
+  border: 1px outset hsl(0, 100%, 30%)
+}
+
+#y {
+  background-color: yellow;
+  --main-bg-color: yellow;
+  border: 1px outset hsl(60, 100%, 30%)
+}
+
+#g {
+  background-color: green;
+  --main-bg-color: green;
+  border: 1px outset hsl(140, 100%, 25%)
+}
+
+.searchBox {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  padding: 1em;
+  margin-right: 4em;
+}
+
+.searchBox > form {
+  display: flex;
+  flex: 3;
+}
+
+.searchBox > form > input[type="text"] {
+  flex: 1;
+  font-size: 1.3em;
+  color: #706b66;
+  background-color: #94e344;
+  border: 3px solid #2b2b26;
+  outline: none;
+  text-align: center;
+}
+
+.searchBox > form > input[type="text"]::placeholder {
+  color: #706b66;
+}
+
+.searchBox > form > input[type="submit"] {
+  font-size: 1.5em;
+  border-top: 2px solid #222;
+  border-bottom: 4px solid #222;
+  border-right: 2px solid #222;
+  border-left: 2px solid #222;
+  border-radius: 5px;
+  margin: 5px;
+  color: #eee;
+  background-color: #666;
+  /* background-color: rgb(189, 18, 18); */
+}
+
+.infoCasing {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1 1 100%;
+  flex-wrap: wrap;
+  border: 3px ridge #243137;
+  border-radius: 3px 3px 3px 3em;
+  background-color: #e2f3e4;
+  margin: 10px 10%;
+  padding: 5px 10px;
+}
+
+.infoLights {
+  display: flex;
+  justify-content: center;
+}
+
+.infoLights > div {
+  width: 1em;
+  height: 1em;
+  margin: .5em 1.5em;
+  border: 1px outset #666;
+  background-color: var(--main-bg-color);
+  border-radius: 50%;
+}
+
+.infoScreen {
+  width: 100%;
+  margin: .5em;
+  color: #243137;
+  font-weight: 0 1.5em;
+  border: 3px inset #243137;
+  border-radius: 5px;
+  padding: .25em;
+  background-color: #768448;
+}
+
+.infoScreen > hr {
+  border-color: #243137;
+}
+
+.pokeTitle {
+  display: flex;
+  justify-content: center;
+  font-weight: bold;
+  text-transform: capitalize;
+  font-size: 2.5em;
+}
+
+.infoContent {
+  font-size: 1.5em;
+}
+
+.pokeBodyTop {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: nowrap;
+  padding: 0 1em;
+}
+
+.pokeId {
+  flex: 1;
+}  
+
+.pokeBodyMid {
+  padding: 0 .25em;
+  display: flex;
+}
+
+.pokeBodyMid > div {
+  flex: auto;
+}
+
+img {
+  display: block;
+  margin: 0 auto;
+  padding: 1em;
+  transform: scale(1.5);
+}
+
+.pokeBodyMid > * > ul, li {
+  list-style: none;
+  margin: 0;
+  padding: 0 2px;
+}
+
+.infoBottom {
+  width: 100%;
+  display: flex;
+  margin: .25em 1em;
+}
+
+.infoBottom > div {
+  width: 1.5em;
+  height: 1.5em;
+  border: 1px outset #666;
+  border-radius: 50%;
+  background: var(--main-bg-color); /* Old browsers */
+  background: -moz-radial-gradient(center, ellipse farthest-corner, #ff4545 0%, var(--main-bg-color) 100%); /* FF3.6-15 */
+  background: -webkit-radial-gradient(center, ellipse farthest-corner, #ff4545 0%, var(--main-bg-color) 100%); /* Chrome10-25,Safari5.1-6 */
+  background: radial-gradient(ellipse at center, #ff4545 0%, var(--main-bg-color) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff4545', endColorstr=var(--main-bg-color),GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}
+
+.infoBottom > i {
+  text-align: right;
+  flex: 1;
+}
+
+/* Lighting Animations */
+@keyframes lightuplg {
+  from {
+    box-shadow: none;
+  }
+  to {
+    box-shadow: 0 0 1.5em 1em var(--main-bg-color);
+  }
+}
+
+@keyframes lightupsm {
+  from {
+    box-shadow: none;
+  }
+  to {
+    box-shadow: 0 0 .4em .4em var(--main-bg-color);
+  }
+}
+
+/* media queries start here */
+@media only screen and (max-width: 768px) {
+  .container {
+    width: auto;
+  }
+
+  .infoContent {
+    font-size: inherit;
+  }
+
+  .pokeTitle {
+    font-size: 1.5em;
+  }
+
+  img {
+    padding: 1.6em 0;
+    transform: scale(1.5);
+  }
+  
+}
+
+@media only screen and (max-width: 425px) {
+  #root {
+    height: inherit;
+  }
+  .App {
+    background-image: none;
+    background: rgb(189, 18, 18);
+  }
+  .container {
+    height: inherit;
+    overflow: auto;
+  }
+  .topPad {
+    overflow: auto;
+    max-height: 100%;
+  }
+  .searchBox {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    padding: .2em;
+    margin-right: auto;
+  }
+  .searchBox > form {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    flex-direction: column;
+  }
+  .searchBox > form > input[type="text"] {
+    padding: .4em;
+  }
+  .searchBox > form > input[type="submit"] {
+    padding: .3em;
+  }
+  .infoCasing {
+    margin: 0;
+  }
+  .pokeBodyMid {
+    padding: 0 .3em;
+    flex-wrap: wrap;
+  }
+  .pokeBodyMid > div {
+    padding-top: 5px;
+  }
+  img {
+    transform: scale(1.1);
+  }
+
+
 }
